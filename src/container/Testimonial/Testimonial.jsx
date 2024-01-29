@@ -37,7 +37,8 @@ const Testimonial = () => {
     <>
    {testimonials.length && (
     <>
-    <div className="app__testimonial-item app__flex">
+   
+      <div className="app__testimonial-item app__flex">
       <img src={urlFor(test.imgurl)} alt="testimonial"/>
       <div className="app__testimonial-content">
         <p className="p-text">{test.feedback}</p>
@@ -51,25 +52,27 @@ const Testimonial = () => {
       </h5>
       </div>
 
-    </div>
-    </div>
-<div className="app__testimonial-btns app__flex">
-  <div className="app__flex" onClick={() => handleClick(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)}>
-  <HiChevronLeft />
-  </div>
+       </div>
+       </div>
+       <div className="app__testimonial-btns app__flex">
+      <div className="app__testimonial-btns app__flex">
+        <div className="app__flex" onClick={() => handleClick(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)}>
+      <HiChevronLeft />
+      </div>
 
-</div>
+        </div>
 
-<div className="app__testimonial-btns app__flex">
-  <div className="app__flex" onClick={() => handleClick(currentIndex === testimonials.length -1 ? 0: currentIndex + 1)}>
-  <HiChevronRight />
-  </div>
+        <div className="app__testimonial-btns app__flex">
+          <div className="app__flex" onClick={() => handleClick(currentIndex === testimonials.length -1 ? 0: currentIndex + 1)}>
+          <HiChevronRight />
+         </div>
 
-</div>
+        </div>
+        </div>
     </>
     )}
 
-<div className="app__testimonial-brands app__flex">
+      <div className="app__testimonial-brands app__flex">
       {brands.map((brand) => (
         <motion.div 
         whileInView={{ opacity: [0,1] }}
@@ -90,6 +93,6 @@ const Testimonial = () => {
 }
 
 export default AppWrap (
-MotionWrap (Testimonial, 'app_testimonial'),
+MotionWrap (Testimonial, 'app__testimonial'),
   'testimonials',
-  'app_primarybg',);
+  'app__primarybg',);
